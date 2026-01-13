@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# https://www.reddit.com/r/swaywm/comments/1lj86e1/comment/nm030nq/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+
+# Check if Sway is asking for the main display (:0)
+if [ "$1" != ":0" ]; then
+    # If not :0 (e.g. gamescope), run the REAL Xwayland
+    exec /usr/bin/Xwayland "$@"
+else
+    # If it IS :0, we trick Sway.
+    # 1. Launch the satellite (which handles the actual X server)
+    swaymsg exec xwayland-satellite
+    
+    # 2. Do NOT run the real Xwayland (which would conflict).
+    exit 0
+fi

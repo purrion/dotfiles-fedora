@@ -1,0 +1,28 @@
+### Solve flickering on Zed editor (Sway v1.11)
+# https://github.com/swaywm/sway/issues/8755
+WLR_RENDER_NO_EXPLICIT_SYNC=1
+
+# https://wiki.archlinux.org/title/Sway#No_visible_cursor
+WLR_NO_HARDWARE_CURSORS=1
+
+### Solve blank screen on Java-based applications
+# https://wiki.archlinux.org/title/Sway#Java_applications
+_JAVA_AWT_WM_NONREPARENTING=1
+
+### Input method
+#
+# X11 & XWayland 
+XMODIFIERS="@im=fcitx"
+#
+SDL_IM_MODULE=fcitx
+#
+# Qt 4/5
+QT_IM_MODULE=fcitx
+#
+# Qt 6.7+ (define a fallback chain)
+QT_IM_MODULES="wayland;fcitx"
+#
+###
+
+### Qt theme
+QT_QPA_PLATFORMTHEME=qt6ct
