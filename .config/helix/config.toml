@@ -1,0 +1,19 @@
+theme = "catppuccin_macchiato"
+
+[editor]
+cursorline = true
+soft-wrap.enable = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[keys.insert]
+"C-[" = "normal_mode"
+"A-\\" = "normal_mode" 
+
+[keys.select]
+"C-[" = "normal_mode"
+"A-\\" = "normal_mode"
+

@@ -1,0 +1,14 @@
+# Highlight .conf file
+[[language]]
+name = "bash-conf"
+scope = "source.bash"
+grammar = "bash"       
+file-types = ["conf"]
+
+[[language]]
+name = "markdown"
+language-servers = [ "marksman" ]
+
+[language-server.marksman]
+command = "marksman"
+args = ["server"]
