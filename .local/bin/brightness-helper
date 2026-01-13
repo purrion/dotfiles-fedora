@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Control brightness using `brightnessctl`.
+# Displays a notification with the current value if /usr/bin/notify-send is available
+#
+# Usage: brightness-helper up|down [step]
+# 
+# Requires:     brightnessctl >= 0.5.1-11
+# Recommends:   libnotify
+
+DIRECTION="${1:-up}"
+STEP="${2:-5}"
+
+if [ "$DIRECTION" = "down" ]; then
+    brightnessctl -q set "${STEP}%-"
+else
+    brightnessctl -q set "+${STEP}%"
+fi
+
+if command -v notify-send >/dev/null; then
+    VALUE=$(brightnessctl --percentage get)
+    notify-send -e -h string:x-canonical-private-synchronous:brightness \
+        -h "int:value:$VALUE" -t 800 "Brightness: ${VALUE}%"
+fi
