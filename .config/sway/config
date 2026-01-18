@@ -6,7 +6,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term ~/.local/kitty.app/bin/kitty --single-instance
+set $term kitty --single-instance
 
 set $rofi_cmd rofi -terminal '$term'
 set $launcher $rofi_cmd -show combi -combi-modes drun#run -modes combi
