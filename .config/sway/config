@@ -8,8 +8,9 @@ set $up k
 set $right l
 set $term kitty --single-instance
 
-set $rofi_cmd rofi -terminal '$term'
-set $launcher $rofi_cmd -show combi -combi-modes drun#run -modes combi
+# set $rofi_cmd rofi -terminal '$term'
+# set $launcher $rofi_cmd -show combi -combi-modes drun#run -modes combi
+set $launcher vicinae toggle
 
 
 set $swaynag_dialog swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
@@ -33,19 +34,21 @@ workspace 6 output $disp2
 output * bg $HOME/Pictures/Wallpapers/helloworld-catppuccin-macchiato.png fill
 
 # Appearance
+# set $titlebar_font "Maple Mono NF CN"
 default_border pixel 2
 font pango:monospace 1
 gaps inner 6
 gaps outer 6
 smart_borders on
 smart_gaps on
+titlebar_padding 2
 
 ## Window decoration
 # class                 border  backgr. text    indicator child_border
-client.focused          #89b4faff #89b4faff #ffffff00 #7aa2f7   #7aa2f7
-client.focused_inactive #ffffff00 #89b4fa #ffffff00 #2f334d   #2f334d
-client.unfocused        #ffffff00 #89b4fa88 #ffffff00 #2f334d   #2f334d
-client.urgent           #ffffff00 #ebcb8b #ffffff00 #8fbcbb   #ebcb8b
+client.focused          #89b4faff #89b4faff #ffffffff #7aa2f7   #7aa2f7
+client.focused_inactive #ffffff00 #89b4fa #ffffffff #2f334d   #2f334d
+client.unfocused        #ffffff00 #89b4fa88 #ffffffff #2f334d   #2f334d
+client.urgent           #ffffff00 #ebcb8b #ffffffff #8fbcbb   #ebcb8b
 
 
 # Set gtk themes
@@ -69,8 +72,6 @@ exec_always {
     gsettings set org.cinnamon.desktop.default-applications.terminal exec '$term'
 }
 
-# Fonts (For sway window titles only)
-# font pango:$titlebar_font $titlebar_text_size
 
 # Example configuration:
 #
@@ -93,7 +94,6 @@ input type:keyboard {
     repeat_delay 300
     repeat_rate  30
     xkb_layout "us"
-    # xkb_options caps:swapescape
 }
 
 #
