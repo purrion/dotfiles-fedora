@@ -9,6 +9,22 @@ file-types = ["conf"]
 name = "markdown"
 language-servers = [ "marksman" ]
 
+
+[[language]]
+name = "lua"
+language-servers = [ "lua-language-server" ]
+
+[[language]]
+name = "corn"
+scope = "source.corn"
+injection-regex = "corn"
+file-types = ["corn"]
+comment-tokens = "//"
+
+[[grammar]]
+name = "corn"
+source = { git = "https://github.com/jakestanger/tree-sitter-corn", rev = "master" }
+
 [language-server.marksman]
 command = "marksman"
 args = ["server"]
