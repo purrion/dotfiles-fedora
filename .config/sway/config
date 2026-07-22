@@ -10,8 +10,7 @@ set $term kitty --single-instance
 
 # set $rofi_cmd rofi -terminal '$term'
 # set $launcher $rofi_cmd -show combi -combi-modes drun#run -modes combi
-set $launcher vicinae toggle
-
+set $launcher walker
 
 set $swaynag_dialog swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
