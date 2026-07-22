@@ -120,3 +120,11 @@ source ${ZIM_HOME}/init.zsh
 eval "$(zoxide init zsh)"
 eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
+
+# pnpm
+export PNPM_HOME="/home/purrion/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
