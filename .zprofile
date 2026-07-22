@@ -13,6 +13,10 @@ export TERMINAL="${TERMINAL:-kitty}"
 #
 export ANDROID_HOME=/opt/android_sdk
 
+### Flutter
+#
+export PATH="$HOME/develop/flutter/bin:$PATH"
+export CHROME_EXECUTABLE="/usr/bin/brave-browser"
 
 ### Paths
 #
